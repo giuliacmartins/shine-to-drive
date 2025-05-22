@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Engine Bay Cleaning - Shine to Drive</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="icon" type="image/png" href="../assets/shine_to_drive_browser_logo.png" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+    :root {
+        --primary: #000000;
+        --text: #ffffff;
+        --card-bg: #f4f4f4;
+        --accent: #c59d5f;
+        --accent-dark: #a88a4f;
+        --price-bg: #f0f0f0;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body.light-mode {
+        background-color: var(--text);
+        font-family: "Roboto", sans-serif;
+        overflow-x: hidden;
+    }
+
+    header.service-header {
+        position: static;
+        top: 0;
+        width: 100%;
+        color: var(--text);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--primary);
+    }
+
+    .logo {
+        height: 100px;
+        object-fit: contain;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        background-color: var(--primary);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    nav a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: var(--accent);
+    }
+
+    .nav-btn {
+        background-color: var(--accent);
+        color: var(--text);
+        padding: 1rem 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-btn:hover {
+        background-color: var(--accent-dark);
+        color: var(--primary);
+    }
+
+    .hero-service {
+        height: 85vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text);
+        text-align: center;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(0,0,0,0.9)),
+                    url('../assets/mock10.jpg') no-repeat center center/cover;
+    }
+
+    .hero-content {
+        padding: 2rem;
+        border-radius: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 6rem;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+        font-weight: 100;
+    }
+
+    .hero-buttons .btn {
+        display: inline-block;
+        background-color: var(--accent);
+        color: var(--text);
+        padding: 1.2rem 1.2rem;
+        border-radius: 5px;
+        text-decoration: none;
+        margin: 2rem 0.5rem 0 0.5rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .hero-buttons .btn:hover {
+        background-color: var(--accent-dark);
+        color: black;
+    }
+
+    .book-btn {
+        display: inline-block;
+        background-color: var(--accent);
+        color: var(--text);
+        padding: 1.2rem 1.2rem;
+        border: 1px solid var(--accent);
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .book-btn:hover {
+        background-color: var(--accent-dark);
+        color: var(--primary);
+    }
+
+    .byq-btn {
+        display: inline-block;
+        background-color: none;
+        color: var(--primary);
+        margin-left: 1rem;
+        padding: 1.2rem 1.2rem;
+        border: 1px solid var(--accent);
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .byq-btn:hover {
+        background-color: var(--accent);
+        color: var(--text);
+    }
+
+    .headlight-layout {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .headlight-layout h2 {
+        font-weight: 600;
+        font-size: 4rem; 
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    .headlight-content {
+        display: flex;
+        padding: 5rem 5rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .headlight-text {
+        flex: 1;
+        max-width: 50%;
+        text-align: left;
+    }
+
+    .headlight-text p {
+        margin-bottom: 1rem;
+        font-weight: 300;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        width: 85%; 
+    }
+
+    .headlight-image {
+        flex: 1;
+        max-width: 600px;
+        margin-left: 1rem;
+    }
+
+    .headlight-image img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .pricing-section {
+        background-color: var(--price-bg);
+        width: 100%;
+        padding-bottom: 3rem;
+    }
+
+    .pricing-section h2 {
+        font-size: 3rem;
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+
+    .pricing-widget {
+        padding: 25px;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .price-box {
+        background-color: var(--card-bg);
+        border-radius: 8px;
+        padding: 2rem;
+        width: 400px;
+        height: 250px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+        display: inline-block;
+        position: relative;
+    }
+
+    .price-box:hover {
+        transform: scale(1.05);
+    }
+
+    .price-box h4 {
+        margin: 0;
+        color: var(--text);
+        font-size: 2rem;
+        font-weight: 300;
+        background-color: black;
+        color: white;
+        padding: 0.5rem;
+        border-radius: 5px 5px 0 0;
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .price-box p {
+        font-size: 3rem;
+        font-weight: 500;
+        color: var(--accent);
+        margin-top: 5rem;
+    }
+
+    /* Footer */
+    .extended-footer {
+        background-color: var(--primary);
+        color: var(--text);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-top {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .footer-contact h3,
+    .footer-links h3 {
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo img {
+        height: 150px;
+        object-fit: contain;
+    }
+
+    .footer-contact,
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .footer-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-links a:hover {
+        color: var(--accent);
+    }
+
+    .footer-contact i,
+    .footer-links i {
+        margin-right: 0.5rem;
+        color: var(--accent);
+    }
+
+    .footer-contact a {
+        text-decoration: none;
+        color: var(--text);
+        transition: color 0.3s ease;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-contact a:hover {
+        color: var(--accent);
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid var(--accent);
+        margin: 1rem 0;
+        width: 100%;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        font-size: 0.95rem;
+        color: var(--text);
+    }
+
+    /* Back to Top */
+    #backToTop {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+        font-size: 24px;
+        background-color: #1c1c1c;
+        color: var(--accent);
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        display: none;
+    }
+
+    #backToTop:hover {
+        background-color: var(--accent);
+        color: var(--text);
+    }
+
+    /* Hamburger Menu */
+    .service-hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .service-hamburger .service-bar {
+        height: 3px;
+        width: 100%;
+        background-color: var(--text);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .service-hamburger.is-active .service-bar:nth-child(1) {
+        transform: rotate(45deg) translateY(14px);
+    }
+
+    .service-hamburger.is-active .service-bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .service-hamburger.is-active .service-bar:nth-child(3) {
+        transform: rotate(-45deg) translateY(-14px);
+    }
+
+    .service-hamburger {
+        display: none;
+    }
+
+    @media (min-width: 993px) and (max-width: 1313px) {
+        .pricing-widget {
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .price-box {
+            width: 45%;
+            height: auto;
+            margin-bottom: 2rem;
+        }
+
+        .price-box p {
+            margin-top: 4rem;
+        }
+    }
+
+    @media (max-width: 991px) {
+        #main-nav {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary);
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        #main-nav.nav-active {
+            display: flex;
+        }
+
+        #main-nav .nav-links {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        #main-nav a,
+        #main-nav .nav-btn {
+            padding: 1.5rem;
+            font-size: 1.4rem;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #333;
+            color: var(--text);
+        }
+
+        #main-nav .nav-btn {
+            width: 75%;
+        }
+
+        #main-nav .nav-links a:hover {
+            color: var(--accent); 
+        }
+
+        .service-hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+        }
+
+        .headlight-content {
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .headlight-text {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .headlight-text p {
+            width: 100%;
+        }
+
+        .headlight-image {
+            max-width: 100%;
+            margin: 2rem 0 0 0;
+        }
+
+        .pricing-widget {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .price-box {
+            width: 90%;
+            height: auto;
+            padding: 1.5rem;
+        }
+
+        .price-box p {
+            margin-top: 4rem;
+        }
+
+        .pricing-section {
+            height: auto;
+            padding-bottom: 2rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .logo {
+            height: 65px;
+        }
+
+        header.service-header {
+            flex-direction: row; 
+            align-items: center; 
+            justify-content: space-between;
+            padding: 1rem;
+        }
+
+        nav {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .hero-service {
+            height: auto;
+            padding: 3rem 1rem;
+            background-position: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+        }
+
+        .hero-buttons .btn,
+        .book-btn,
+        .byq-btn {
+            display: block;
+            width: 100%;
+            margin: 0.5rem 0;
+            text-align: center;
+        }
+
+        .service-section h2 {
+            font-size: 3rem;
+        }
+
+        .headlight-content {
+            padding: 1rem;
+        }
+
+        .headlight-text p {
+            font-size: 1rem;
+        }
+
+        .price-box h4 {
+            font-size: 1.5rem;
+        }
+
+        .price-box p {
+            font-size: 2rem;
+            margin-top: 3.5rem;
+        }
+
+        .example-cars {
+            font-size: 0.95rem;
+        }
+
+        .footer-top {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-logo img {
+            height: 100px;
+        }
+
+        .footer-contact,
+        .footer-links {
+            align-items: center;
+        }
+
+        .footer-contact p,
+        .footer-links a {
+            font-size: 0.95rem;
+        }
+    }
+  </style>
+</head>
+
+<body class="light-mode">
+    <header class="service-header">
+        <a href="../index.html"><img src="../assets/shine_to_drive_logo.png" alt="Shine to Drive Logo" class="logo"/></a>
+
+        <button class="service-hamburger" id="service-hamburger-btn" aria-label="Menu">
+            <div class="service-bar"></div>
+            <div class="service-bar"></div>
+            <div class="service-bar"></div>
+        </button>
+
+        <nav id="main-nav">
+            <div class="nav-links">
+                <a href="../index.html#hero">HOME</a>
+                <a href="../index.html#services">SERVICES</a>
+                <a href="../index.html#why-us">ABOUT US</a>
+                <a href="../index.html#blog">BLOGS</a>
+                <a href="../index.html#contact">BOOK</a>
+                <a href="../index.html#gallery">GALLERY</a>
+            </div>
+            <a href="../buildQuote/build-quote.html" class="nav-btn">BUILD YOUR QUOTE</a>
+        </nav>
+    </header>
+
+    <section class="hero-service">
+        <div class="hero-content">
+            <h1>ENGINE BAY CLEANING</h1>
+            <p>Remove Dirt, Grease, and Grime for a Cleaner, Safer Engine Bay</p>
+            <div class="hero-buttons">
+                <a href="https://calendly.com/shinetodrive/detailbookings" target="_blank" class="btn">BOOK NOW</a>
+                <a href="../buildQuote/build-quote.html" class="btn">BUILD YOUR QUOTE</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="enginebay-service" class="headlight-layout">
+        <h2>DEEP CLEAN WHERE IT MATTERS</h2>
+        <div class="headlight-content">
+            <div class="headlight-text">
+                <p>
+                    Your engine bay collects dirt, grease, and debris over time — all of which can impact performance and presentation. A clean engine not only looks better, but can help with early detection of leaks and mechanical issues.
+                </p>
+                <p>
+                    At Shine to Drive, we carefully clean and protect your engine bay with non-damaging, low-moisture techniques. Our goal is to give your vehicle the complete detail it deserves — from bumper to engine block.
+                </p>
+                <a href="https://calendly.com/shinetodrive/detailbookings" target="_blank" class="book-btn">BOOK NOW</a>
+                <a href="../buildQuote/build-quote.html" class="byq-btn">BUILD YOUR QUOTE</a>
+            </div>
+            <div class="headlight-image">
+                <img src="../assets/honengine.jpeg" alt="Engine Bay Cleaning" />
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <h2>OUR PRICING</h2>
+            <div class="pricing-widget">
+                <div class="price-box">
+                    <h4>Engine Bay Cleaning</h4>
+                    <p>$75 - $95</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="extended-footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="../assets/shine_to_drive_logo.png" alt="Shine to Drive Logo" />
+            </div>
+
+            <div class="footer-contact">
+                <h3>CONTACT US</h3>
+                <p><i class="fas fa-phone-alt"></i> (954) 993-4883</p>
+                <p><i class="fas fa-envelope"></i> shinetodrive@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Broward & Miami-Dade County</p>
+                <p>
+                    <a href="https://www.instagram.com/shinetodrive" target="_blank">
+                    <i class="fab fa-instagram"></i> @shinetodrive
+                    </a>
+                </p>
+            </div>
+
+
+            <div class="footer-links">
+                <h3>QUICK LINKS</h3>
+                <a href="../index.html#hero">Home</a>
+                <a href="../index.html#services">Services</a>
+                <a href="../index.html#why-us">Why Us</a>
+                <a href="../index.html#blog">Blogs</a>
+                <a href="../index.html#contact">Book</a>
+                <a href="../index.html#gallery">Gallery</a>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Shine to Drive. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTopBtn = document.getElementById("backToTop");
+
+            window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+            });
+
+            backToTopBtn.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+            });
+        });
+    </script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal().reveal('.hero-content', {
+        origin: 'top',
+        distance: '60px',
+        duration: 1000,
+        easing: 'ease-in-out',
+        interval: 200
+        });
+
+        ScrollReveal().reveal('.headlight-text', {
+        origin: 'left',
+        distance: '60px',
+        duration: 1000,
+        easing: 'ease-in-out',
+        interval: 200
+        });
+
+        ScrollReveal().reveal('.headlight-image', {
+        origin: 'right',
+        distance: '60px',
+        duration: 1000,
+        easing: 'ease-in-out',
+        interval: 200
+        });
+
+        ScrollReveal().reveal('.pricing-widget', {
+        origin: 'left',
+        distance: '60px',
+        duration: 1000,
+        easing: 'ease-in-out',
+        interval: 200
+        });
+    </script>
+</body>
+</html>
