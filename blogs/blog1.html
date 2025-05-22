@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top 5 Tips for Maintaining Your Car’s Shine - Shine to Drive</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="icon" type="image/png" href="../assets/shine_to_drive_browser_logo.png" />
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+    :root {
+        --primary: #000000;
+        --text: #ffffff;
+        --accent: #c59d5f;
+        --accent-dark: #a88a4f;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body.light-mode {
+        background-color: var(--text);
+        font-family: "Roboto", sans-serif;
+        overflow-x: hidden;
+    }
+
+    /* Header */
+    header.service-header {
+        position: static;
+        top: 0;
+        width: 100%;
+        color: var(--text);
+        padding: 1rem 2rem;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--primary);
+    }
+
+    .logo {
+        height: 100px;
+        object-fit: contain;
+    }
+
+    /* Nav menu */
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        background-color: var(--primary);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    nav a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: var(--accent);
+    }
+
+    .nav-btn {
+        background-color: var(--accent);
+        color: var(--text);
+        padding: 1rem 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-btn:hover {
+        background-color: var(--accent-dark);
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    .article-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .article-date {
+        font-size: 0.9rem;
+        color: darkgrey;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .article-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+    }
+
+    .article-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--primary);
+    }
+
+    a.back-link {
+        display: inline-block;
+        margin-top: 2rem;
+        color: #c6a760;
+        text-decoration: none;
+    }
+
+    a.back-link:hover {
+        color: #a88a4f;
+    }
+
+     /* Footer */
+    .extended-footer {
+        background-color: var(--primary);
+        color: var(--text);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-top {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .footer-contact h3,
+    .footer-links h3 {
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo img {
+        height: 150px;
+        object-fit: contain;
+    }
+
+    .footer-contact,
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .footer-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-links a:hover {
+        color: var(--accent);
+    }
+
+    .footer-contact i,
+    .footer-links i {
+        margin-right: 0.5rem;
+        color: var(--accent);
+    }
+
+    .footer-contact a {
+        text-decoration: none;
+        color: var(--text);
+        transition: color 0.3s ease;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-contact a:hover {
+        color: var(--accent);
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid var(--accent);
+        margin: 1rem 0;
+        width: 100%;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        font-size: 0.95rem;
+        color: var(--text);
+    }
+
+    /* Back to Top */
+    #backToTop {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+        font-size: 24px;
+        background-color: #1c1c1c;
+        color: var(--accent);
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        display: none;
+    }
+
+    #backToTop:hover {
+        background-color: var(--accent);
+        color: var(--text);
+    }
+
+    /* Hamburger Menu */
+    .service-hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .service-hamburger .service-bar {
+        height: 3px;
+        width: 100%;
+        background-color: var(--text);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .service-hamburger.is-active .service-bar:nth-child(1) {
+        transform: rotate(45deg) translateY(14px);
+    }
+
+    .service-hamburger.is-active .service-bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .service-hamburger.is-active .service-bar:nth-child(3) {
+        transform: rotate(-45deg) translateY(-14px);
+    }
+
+    .service-hamburger {
+        display: none;
+    }
+
+    @media (max-width: 991px) {
+        header.service-header {
+            flex-direction: row;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        #main-nav {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary);
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        #main-nav.nav-active {
+            display: flex;
+        }
+
+        #main-nav .nav-links {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        #main-nav a,
+        #main-nav .nav-btn {
+            padding: 1.5rem;
+            font-size: 1.4rem;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #333;
+            color: var(--text);
+        }
+
+        #main-nav .nav-btn {
+            width: 75%;
+        }
+
+        #main-nav .nav-links a:hover {
+            color: var(--accent); 
+        }
+
+        .service-hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .article-container {
+            padding: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .article-content {
+            font-size: 1rem;
+        }
+
+        .footer-top {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+        }
+
+        .footer-logo img {
+            height: 120px;
+        }
+
+        .footer-contact,
+        .footer-links {
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .logo {
+            height: 65px;
+        }
+
+        header.service-header {
+            flex-direction: row; 
+            align-items: center; 
+            justify-content: space-between;
+            padding: 1rem;
+        }
+
+        nav {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            padding: 0 0.5rem;
+        }
+
+        .article-image {
+            max-height: 250px;
+        }
+
+        .article-container {
+            padding: 1rem;
+        }
+
+        .article-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer-logo img {
+            height: 100px;
+        }
+
+        .footer-contact p,
+        .footer-links a {
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom {
+            font-size: 0.85rem;
+        }
+
+        .back-link {
+            font-size: 0.95rem;
+        }
+    }
+  </style>
+</head>
+<body class="light-mode">
+    <header class="service-header">
+        <a href="../index.html"><img src="../assets/shine_to_drive_logo.png" alt="Shine to Drive Logo" class="logo"/></a>
+        
+        <button class="service-hamburger" id="service-hamburger-btn" aria-label="Menu">
+            <div class="service-bar"></div>
+            <div class="service-bar"></div>
+            <div class="service-bar"></div>
+        </button>
+
+        <nav id="main-nav">
+            <div class="nav-links">
+                <a href="../index.html#hero">HOME</a>
+                <a href="../index.html#services">SERVICES</a>
+                <a href="../index.html#why-us">ABOUT US</a>
+                <a href="../index.html#blog">BLOGS</a>
+                <a href="../index.html#contact">BOOK</a>
+                <a href="../index.html#gallery">GALLERY</a>
+            </div>
+            <a href="../buildQuote/build-quote.html" class="nav-btn">BUILD YOUR QUOTE</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="blog">
+            <div class="article-container">
+                <h1>Top 5 Tips for Maintaining Your Car’s Shine</h1>
+                <img src="../assets/mock3.jpg" alt="Car Detailing Tips" class="article-image"/>
+                <p class="article-date">Posted on May 7, 2025</p>
+                <div class="article-content">
+                    <p>Keeping your vehicle looking as good as the day you bought it requires more than just occasional washes. Proper car care not only preserves its shine and aesthetic but also protects its value and performance over time. Whether you’re a weekend enthusiast or someone just looking to keep your ride sharp, these top five tips will help ensure your car always turns heads.</p>
+
+                    <h2>1. Wash Regularly and Correctly</h2>
+                    <p>Regular washing is the first step to maintaining your car’s exterior. Avoid automatic car washes that use abrasive brushes — instead, wash by hand using a microfiber mitt and pH-balanced car shampoo. This reduces the risk of scratches and swirl marks. Don’t forget to rinse thoroughly and dry with a clean microfiber towel to avoid water spots.</p>
+
+                    <h2>2. Apply a Quality Wax or Sealant</h2>
+                    <p>Waxing provides a protective barrier against UV rays, road grime, bird droppings, and rain. Apply a quality wax or ceramic sealant every 3-6 months to protect your paint and keep that showroom shine. Products like spray waxes are quick to apply and offer short-term protection between full applications.</p>
+
+                    <h2>3. Keep the Interior Clean and Protected</h2>
+                    <p>Your car’s interior deserves just as much attention. Vacuum regularly and use interior cleaners suitable for your materials—leather, vinyl, or fabric. Apply UV protectant to dashboards and trim to prevent cracking and fading from sun exposure. Keeping the cabin clean not only looks good but also makes driving more enjoyable.</p>
+
+                    <h2>4. Use Proper Tools and Products</h2>
+                    <p>Avoid using kitchen towels, dish soap, or general-purpose cleaners on your car. Invest in automotive-grade cleaning supplies such as microfiber cloths, foam applicators, and non-abrasive brushes. Using the right tools helps you achieve better results and prevents unintended damage.</p>
+
+                    <h2>5. Don’t Forget the Details</h2>
+                    <p>Pay attention to commonly overlooked areas: clean your wheels and tires, polish chrome accents, and maintain clear headlights. Use tire shine to make rubber pop and apply plastic trim restorer to faded exterior parts. These small touches can make a big visual difference.</p>
+
+                    <p>By integrating these steps into your regular maintenance routine, you’ll preserve your car’s aesthetic and boost its long-term value. A well-kept car doesn’t just look amazing—it reflects the pride of ownership and care you invest in your vehicle.</p>
+                </div>
+
+                <a href="../index.html" class="back-link">← Back to Blogs</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="extended-footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="../assets/shine_to_drive_logo.png" alt="Shine to Drive Logo" />
+            </div>
+
+            <div class="footer-contact">
+                <h3>CONTACT US</h3>
+                <p><i class="fas fa-phone-alt"></i> (954) 993-4883</p>
+                <p><i class="fas fa-envelope"></i> shinetodrive@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Broward & Miami-Dade County</p>
+                <p>
+                    <a href="https://www.instagram.com/shinetodrive" target="_blank">
+                    <i class="fab fa-instagram"></i> @shinetodrive
+                    </a>
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>QUICK LINKS</h3>
+                <a href="../index.html#hero">Home</a>
+                <a href="../index.html#services">Services</a>
+                <a href="../index.html#why-us">Why Us</a>
+                <a href="../index.html#blog">Blogs</a>
+                <a href="../index.html#contact">Book</a>
+                <a href="../index.html#gallery">Gallery</a>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Shine to Drive. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTopBtn = document.getElementById("backToTop");
+
+            window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+            });
+
+            backToTopBtn.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+            });
+        });
+    </script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal().reveal('h1', {
+            origin: 'left',
+            distance: '60px',
+            duration: 1000,
+            easing: 'ease-in-out',
+            interval: 200
+        });
+
+        ScrollReveal().reveal('.article-image', {
+            origin: 'left',
+            distance: '60px',
+            duration: 1000,
+            easing: 'ease-in-out',
+            interval: 200
+        });
+
+        ScrollReveal().reveal('.article-date', {
+            origin: 'left',
+            distance: '60px',
+            duration: 1000,
+            easing: 'ease-in-out',
+            interval: 200
+        });
+
+        ScrollReveal().reveal('.article-content', {
+            origin: 'left',
+            distance: '60px',
+            duration: 1000,
+            easing: 'ease-in-out',
+            interval: 200
+        });
+
+        ScrollReveal().reveal('.back-link', {
+            origin: 'left',
+            distance: '60px',
+            duration: 1000,
+            easing: 'ease-in-out',
+            interval: 200
+        });
+    </script>
+</body>
+</html>
